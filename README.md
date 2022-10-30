@@ -1,2 +1,2 @@
-# poc-nodejs-scratch
-node js from scratch
+# Typescript NodeJS starter app
+Node JS + typescript starter app
