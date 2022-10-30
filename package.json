@@ -1,0 +1,9 @@
+{
+  "name": "poc-nodejs",
+  "version": "0.0.1",
+  "description": "Node js typescript poc",
+  "main": "index.js",
+  "repository": "https://github.com/jrking365/poc-nodejs-scratch.git",
+  "author": "mail@jrking-dev.com",
+  "license": "MIT"
+}
