@@ -6,7 +6,7 @@
   "author": "mail@jrking-dev.com",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon --watch lib --exec ts-node lib/index.ts",
+    "start:dev": "nodemon --watch lib --exec ts-node index.ts",
     "lint": "eslint --ext .ts ."
   },
   "devDependencies": {
