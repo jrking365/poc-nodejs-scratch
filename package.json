@@ -6,8 +6,9 @@
   "author": "mail@jrking-dev.com",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon --watch lib --exec ts-node index.ts",
-    "lint": "eslint --ext .ts ."
+    "start:dev": "nodemon --exec ts-node index.ts",
+    "lint": "eslint --ext .ts --ext .js  .",
+    "lint:fix": "eslint --ext .ts --ext .js  . --fix"
   },
   "dependencies": {
     "config": "^3.3.9",

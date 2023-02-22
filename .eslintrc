@@ -1,20 +1,62 @@
 {
-    "extends" : [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/recommended",
-      "airbnb-typescript/base"
+  "ignorePatterns": [
+    "node_modules/*",
+    "dist/*",
+    "build/*"
+  ],
+  "extends" : [
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import"
+  ],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 1
+      }
     ],
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "plugins": [
-      "@typescript-eslint"
+    "lines-between-class-members": "off",
+    "no-console": "warn",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
     ],
-    "rules": {
-      "no-console": "off"
-    }
+    "linebreak-style": "off",
+    "object-curly-newline": "off",
+    "@typescript-eslint/member-delimiter-style": [
+      "warn",
+      {
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": false
+        },
+        "singleline": {
+          "delimiter": "comma",
+          "requireLast": false
+        }
+      }
+    ],
+    "indent": ["error", 2]
+  },
+  "env": {
+    "browser": true,
+    "jest": true
   }
+}
