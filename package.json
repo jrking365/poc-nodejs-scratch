@@ -6,10 +6,11 @@
   "author": "mail@jrking-dev.com",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon --exec ts-node index.ts",
+    "start:dev": "nodemon  index.ts",
     "lint": "eslint --ext .ts --ext .js  .",
-    "lint:fix": "eslint --ext .ts --ext .js  . --fix"
+    "lint:fix": "eslint --ext .ts --ext .js --ext .d.ts  . --fix"
   },
+  "typings": "service.d.ts",
   "dependencies": {
     "config": "^3.3.9",
     "dotenv": "^16.0.3",

@@ -1,8 +1,7 @@
-// basic node js server in typescript
 import config from 'config';
 import express from 'express';
 
-console.log(config.get('service'));
+console.log(config.service.path);
 console.log(process.env.NODE_ENV);
 
 const app = express();
