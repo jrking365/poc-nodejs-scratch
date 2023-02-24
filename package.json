@@ -6,6 +6,7 @@
   "author": "mail@jrking-dev.com",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "start:dev": "nodemon  index.ts",
     "lint": "eslint --ext .ts --ext .js  .",
     "lint:fix": "eslint --ext .ts --ext .js --ext .d.ts  . --fix"
