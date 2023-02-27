@@ -6,6 +6,9 @@ type ConfigDefinition = {
     level: string
     file: string
   }
+  grpc: {
+    bind: string
+  }
 };
 
 declare module 'config' {

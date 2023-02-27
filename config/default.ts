@@ -8,5 +8,8 @@ module.exports = {
   log: {
     level: process.env.LOG_LEVEL,
     file: process.env.LOG_FILE,
+  },
+  grpc: {
+    bind: process.env.GRPC_BIND,
   }
 };
