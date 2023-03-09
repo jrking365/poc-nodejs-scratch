@@ -7,6 +7,6 @@ services:
     build:
       context: .
       dockerfile: dockerfile.yml
-      #target: development
+      target: development
     volumes:
       - .:/app

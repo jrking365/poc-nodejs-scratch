@@ -1,5 +1,5 @@
 
-FROM node:19-alpine
+FROM node:19-alpine as base
 
 ARG app_path=/app
 
@@ -19,10 +19,24 @@ WORKDIR $app_path
 COPY package.json yarn.lock $app_path/
 
 # Install dependencies
+#RUN apk --no-cache add yarn && yarn install
 RUN apk --no-cache add yarn && yarn install --production --frozen-lockfile
 
 # Copy the application code to the Docker image
 COPY . $app_path
+
+FROM base as development 
+# Set the environment to development
+ENV NODE_ENV=development
+
+# Expose port 3000 to the host
+EXPOSE 3000
+
+# Start the Node.js application from the /app/build directory
+CMD [ "yarn", "start:dev" ]
+
+
+FROM base as production
 
 RUN yarn build
 
@@ -34,5 +48,8 @@ ENV NODE_ENV=production
 # Expose port 3000 to the host
 EXPOSE 3000
 
+# CMD npm run star
+
+CMD ["yarn", "start"]
 # Start the Node.js application from the /app/build directory
-CMD ["node", "build/index.js"]
+#CMD ["node", "build/index.js"]
