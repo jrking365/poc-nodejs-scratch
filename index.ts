@@ -1,7 +1,8 @@
 import config from 'config';
 import express from 'express';
 
-console.log(config.service.path);
+process.stdout.write(config.service.path);
+// eslint-disable-next-line no-console
 console.log(process.env.NODE_ENV);
 
 const app = express();
@@ -12,5 +13,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  process.stdout.write(`Example app listening at http://localhost:${port}`);
 });
