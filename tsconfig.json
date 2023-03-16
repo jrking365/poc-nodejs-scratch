@@ -12,6 +12,7 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "alwaysStrict": false,
+    "allowJs": true,
   },
   "files": [
     "service.d.ts"

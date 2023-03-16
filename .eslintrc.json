@@ -2,7 +2,8 @@
   "ignorePatterns": [
     "node_modules/*",
     "dist/*",
-    "build/*"
+    "build/*",
+    "lib/protos/*"
   ],
   "extends" : [
     "airbnb-base",

@@ -12,3 +12,7 @@ need to install dev-dep: @types/google-protobuf, grpc_tools_node_protoc_ts
  docker-compose run poc-nodejs yarn grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=grpc_js:./lib/protos -I ./protos ./protos/hello.proto
  ```
  weirdly enough the grpc_tools_node_protoc_ts generates only .d.ts file to be used from the js generated files... using it while exploring another package that generates directly typescript files. (we don't want JS in our codebase)
+ this is the code to generate the javascript 
+ ```zsh
+ docker-compose run poc-nodejs yarn grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./lib/protos --grpc_out=grpc_js:./lib/protos --plugin=protoc-gen-grpc=./node_modules/grpc-tools/bin/grpc_node_plugin -I ./protos ./protos/hello.proto
+ ```
