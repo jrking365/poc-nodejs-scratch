@@ -7,7 +7,6 @@ RUN mkdir -p $app_path
 
 WORKDIR $app_path
 
-# Copy the application code to the Docker image
 COPY . $app_path
 
 FROM base as development 
